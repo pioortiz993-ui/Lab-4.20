@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lagwerta ni Celio — Carrascal, Surigao del Sur</title>
+<meta name="description" content="Lagwerta ni Celio — a roadside table on the National Highway in Carrascal, Surigao del Sur for grilled burgers, oven pizza, sizzling platters, halo-halo, mais con yelo and fresh fruit shakes.">
+<meta name="theme-color" content="#1C1613">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23EA4B1E'/%3E%3Cellipse cx='32' cy='36' rx='18' ry='9' fill='%231C1613'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@600;700&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --char:#1C1613;
+    --char-2:#241C18;
+    --ember:#EA4B1E;
+    --ember-2:#F4703F;
+    --leaf:#43593F;
+    --cream:#FBF1E4;
+    --cream-2:#F3E6D2;
+    --ube:#6C4A82;
+    --mango:#F2B705;
+    --ink:#1C1613;
+    --paper:#FBF1E4;
+    --muted-on-dark:#CBB9A8;
+    --muted-on-light:#6B5C4D;
+    --radius:3px;
+    --maxw:1180px;
+    --disp:'Anton', sans-serif;
+    --script:'Caveat', cursive;
+    --body:'Work Sans', sans-serif;
+    --mono:'IBM Plex Mono', monospace;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth; scroll-padding-top:84px;}
+  body{
+    margin:0;
+    font-family:var(--body);
+    background:var(--paper);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block; max-width:100%;}
+  a{color:inherit;}
+  ul{list-style:none; margin:0; padding:0;}
+  h1,h2,h3{margin:0; font-family:var(--disp); font-weight:400; text-transform:uppercase; letter-spacing:0.01em;}
+  p{margin:0;}
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    font-weight:600;
+  }
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
+  section{position:relative;}
+
+  :focus-visible{outline:3px solid var(--ember-2); outline-offset:3px;}
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-family:var(--body);
+    font-weight:700;
+    font-size:0.92rem;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    text-decoration:none;
+    padding:14px 24px;
+    border-radius:var(--radius);
+    border:2px solid transparent;
+    cursor:pointer;
+    transition:transform .15s ease, background-color .15s ease, color .15s ease;
+  }
+  .btn:active{transform:translateY(1px);}
+  .btn::after{
+    content:"";
+    position:absolute;
+    top:-2px; right:-2px;
+    width:9px; height:9px;
+    background:currentColor;
+    opacity:0.9;
+  }
+  .btn-primary{background:var(--ember); color:var(--char);}
+  .btn-primary:hover{background:var(--ember-2);}
+  .btn-primary::after{background:var(--char);}
+  .btn-ghost{background:transparent; color:var(--cream); border-color:var(--cream);}
+  .btn-ghost:hover{background:rgba(251,241,228,0.1);}
+  .btn-ghost::after{background:var(--cream);}
+  .btn-ghost-dark{background:transparent; color:var(--char); border-color:var(--char);}
+  .btn-ghost-dark:hover{background:rgba(28,22,19,0.08);}
+  .btn-ghost-dark::after{background:var(--char);}
+
+  /* ---------- NAV ---------- */
+  .nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(28,22,19,0.94);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(251,241,228,0.08);
+    transition:box-shadow .2s ease;
+  }
+  .nav.is-scrolled{box-shadow:0 8px 24px rgba(0,0,0,0.35);}
+  .nav-inner{
+    max-width:var(--maxw); margin:0 auto; padding:14px 24px;
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+  }
+  .brand{
+    font-family:var(--disp);
+    font-size:1.15rem;
+    color:var(--cream);
+    text-decoration:none;
+    letter-spacing:0.02em;
+    display:flex; align-items:baseline; gap:6px;
+  }
+  .brand small{
+    font-family:var(--script);
+    font-size:0.95rem;
+    color:var(--mango);
+    text-transform:none;
+  }
+  .nav-links{display:flex; align-items:center; gap:28px;}
+  .nav-links a{
+    font-family:var(--mono);
+    font-size:0.78rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--muted-on-dark);
+    text-decoration:none;
+    padding:6px 2px;
+    border-bottom:2px solid transparent;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .nav-links a:hover, .nav-links a.is-active{color:var(--cream); border-color:var(--ember);}
+  .nav-cta{display:flex; align-items:center; gap:14px;}
+  .nav .btn{padding:10px 16px; font-size:0.78rem;}
+  .nav-toggle{
+    display:none;
+    background:transparent; border:2px solid var(--cream); border-radius:var(--radius);
+    width:42px; height:38px;
+    padding:0;
+    cursor:pointer;
+    flex-direction:column; align-items:center; justify-content:center; gap:5px;
+  }
+  .nav-toggle span{display:block; width:20px; height:2px; background:var(--cream); transition:transform .2s ease, opacity .2s ease;}
+  .nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;}
+  .nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:
+      repeating-linear-gradient(0deg, rgba(251,241,228,0.035) 0px, rgba(251,241,228,0.035) 1px, transparent 1px, transparent 28px),
+      radial-gradient(ellipse 900px 560px at 78% 18%, rgba(234,75,30,0.35), transparent 60%),
+      var(--char);
+    color:var(--cream);
+    padding:88px 0 96px;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:48px;
+    align-items:center;
+  }
+  .hero .eyebrow{color:var(--mango); margin-bottom:18px; display:block;}
+  .hero h1{
+    font-size:clamp(2.6rem, 6vw, 4.6rem);
+    line-height:0.98;
+    color:var(--cream);
+  }
+  .hero h1 em{
+    font-family:var(--script);
+    font-style:normal;
+    text-transform:none;
+    color:var(--ember-2);
+    display:block;
+    font-size:0.42em;
+    margin-top:8px;
+    letter-spacing:0.01em;
+  }
+  .hero-copy{
+    margin-top:22px;
+    font-size:1.05rem;
+    line-height:1.6;
+    color:var(--muted-on-dark);
+    max-width:46ch;
+  }
+  .hero-ctas{display:flex; flex-wrap:wrap; gap:14px; margin-top:34px;}
+  .hero-facts{
+    display:flex; gap:28px; margin-top:48px; flex-wrap:wrap;
+  }
+  .hero-fact{border-left:2px solid var(--ember); padding-left:12px;}
+  .hero-fact .eyebrow{color:var(--muted-on-dark); margin-bottom:4px;}
+  .hero-fact strong{display:block; font-size:0.95rem; color:var(--cream);}
+
+  /* signature plate illustration */
+  .plate-wrap{position:relative; display:flex; justify-content:center;}
+  .steam{transform-origin:bottom center; animation:steam 3.4s ease-in-out infinite;}
+  .steam.d2{animation-delay:.5s;}
+  .steam.d3{animation-delay:1s;}
+  @keyframes steam{
+    0%{opacity:0; transform:translateY(0) scaleY(0.8);}
+    30%{opacity:0.85;}
+    100%{opacity:0; transform:translateY(-26px) scaleY(1.15);}
+  }
+
+  /* ---------- INTRO ---------- */
+  .intro{background:var(--cream); padding:64px 0;}
+  .intro-inner{
+    display:grid; grid-template-columns:1.3fr 1fr; gap:48px; align-items:start;
+  }
+  .intro h2{font-size:clamp(1.6rem,3vw,2.2rem); color:var(--char); max-width:16ch;}
+  .intro p{margin-top:16px; color:var(--muted-on-light); line-height:1.7; max-width:52ch;}
+  .stat-list{display:flex; flex-direction:column; gap:18px;}
+  .stat{display:flex; gap:14px; align-items:flex-start;}
+  .stat svg{flex-shrink:0; width:22px; height:22px; color:var(--ember); margin-top:2px;}
+  .stat strong{display:block; font-family:var(--mono); font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted-on-light);}
+  .stat span{display:block; font-size:0.98rem; font-weight:600; margin-top:2px;}
+
+  /* ---------- MENU SECTIONS ---------- */
+  .menu-section{padding:80px 0;}
+  .menu-grill{background:var(--char); color:var(--cream);}
+  .menu-cold{background:linear-gradient(180deg, var(--cream) 0%, var(--cream-2) 100%); color:var(--char);}
+
+  .menu-head{display:flex; justify-content:space-between; align-items:flex-end; gap:24px; margin-bottom:44px; flex-wrap:wrap;}
+  .menu-head .eyebrow{display:block; margin-bottom:10px;}
+  .menu-grill .eyebrow{color:var(--mango);}
+  .menu-cold .eyebrow{color:var(--ube);}
+  .menu-head h2{font-size:clamp(1.9rem,4vw,3rem);}
+  .menu-head p{max-width:38ch; line-height:1.6; font-size:0.98rem;}
+  .menu-grill .menu-head p{color:var(--muted-on-dark);}
+  .menu-cold .menu-head p{color:var(--muted-on-light);}
+
+  .menu-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:20px;}
+  .dish{
+    padding:26px 22px;
+    border-radius:var(--radius);
+    display:flex; flex-direction:column; gap:14px;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .menu-grill .dish{background:var(--char-2); border:1px solid rgba(251,241,228,0.08);}
+  .menu-grill .dish:hover{transform:translateY(-4px); box-shadow:0 14px 30px rgba(0,0,0,0.35); border-color:rgba(234,75,30,0.5);}
+  .menu-cold .dish{background:var(--cream); border:1px solid rgba(28,22,19,0.08);}
+  .menu-cold .dish:hover{transform:translateY(-4px); box-shadow:0 14px 30px rgba(108,74,130,0.16); border-color:rgba(108,74,130,0.4);}
+  .dish svg{width:40px; height:40px;}
+  .menu-grill .dish svg{color:var(--ember-2);}
+  .menu-cold .dish svg{color:var(--ube);}
+  .dish h3{font-family:var(--body); text-transform:none; font-weight:700; font-size:1.08rem; letter-spacing:0;}
+  .dish p{font-size:0.92rem; line-height:1.55;}
+  .menu-grill .dish p{color:var(--muted-on-dark);}
+  .menu-cold .dish p{color:var(--muted-on-light);}
+  .price-note{
+    margin-top:40px;
+    font-family:var(--mono);
+    font-size:0.8rem;
+    letter-spacing:0.03em;
+    display:flex; align-items:center; gap:10px;
+  }
+  .menu-grill .price-note{color:var(--muted-on-dark);}
+  .menu-cold .price-note{color:var(--muted-on-light);}
+  .price-note svg{width:16px; height:16px; color:var(--ember-2); flex-shrink:0;}
+
+  /* ---------- DIVIDER ---------- */
+  .divider{display:block; width:100%; height:90px;}
+
+  /* ---------- LOCATION ---------- */
+  .location{background:var(--char); color:var(--cream); padding:88px 0;}
+  .loc-inner{display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;}
+  .location .eyebrow{color:var(--mango); display:block; margin-bottom:14px;}
+  .location h2{font-size:clamp(1.9rem,4vw,2.8rem); margin-bottom:22px;}
+  .loc-list{display:flex; flex-direction:column; gap:22px; margin-bottom:34px;}
+  .loc-item{display:flex; gap:16px; align-items:flex-start;}
+  .loc-item svg{width:24px; height:24px; color:var(--ember-2); flex-shrink:0; margin-top:2px;}
+  .loc-item strong{display:block; font-family:var(--mono); font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted-on-dark);}
+  .loc-item span, .loc-item a{display:block; font-size:1rem; margin-top:3px; text-decoration:none;}
+  .loc-item a:hover{color:var(--ember-2);}
+  .loc-ctas{display:flex; flex-wrap:wrap; gap:14px;}
+
+  .map-card{
+    background:var(--char-2);
+    border:1px solid rgba(251,241,228,0.1);
+    border-radius:var(--radius);
+    padding:28px;
+    display:flex; flex-direction:column; gap:18px; align-items:center; text-align:center;
+  }
+  .map-card svg{width:64px; height:64px; color:var(--ember-2);}
+  .map-card .plus-code{font-family:var(--mono); font-size:1.1rem; letter-spacing:0.06em; color:var(--cream);}
+  .map-card p{font-size:0.86rem; color:var(--muted-on-dark); line-height:1.6;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--char); border-top:1px solid rgba(251,241,228,0.08); padding:36px 0;}
+  .foot-inner{display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap;}
+  .foot-brand{font-family:var(--disp); color:var(--cream); font-size:1rem; letter-spacing:0.02em;}
+  .foot-tag{font-family:var(--script); color:var(--muted-on-dark); font-size:1.05rem;}
+  .foot-links{display:flex; gap:20px;}
+  .foot-links a{color:var(--muted-on-dark); text-decoration:none; font-family:var(--mono); font-size:0.76rem; letter-spacing:0.06em; text-transform:uppercase;}
+  .foot-links a:hover{color:var(--ember-2);}
+
+  /* ---------- BACK TO TOP ---------- */
+  .top-btn{
+    position:fixed; right:20px; bottom:20px; z-index:60;
+    width:46px; height:46px;
+    border-radius:var(--radius);
+    background:var(--ember);
+    color:var(--char);
+    border:none;
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer;
+    opacity:0; pointer-events:none; transform:translateY(8px);
+    transition:opacity .2s ease, transform .2s ease, background-color .15s ease;
+  }
+  .top-btn.is-visible{opacity:1; pointer-events:auto; transform:translateY(0);}
+  .top-btn:hover{background:var(--ember-2);}
+  .top-btn svg{width:20px; height:20px;}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:860px){
+    .hero-grid{grid-template-columns:1fr; text-align:left;}
+    .plate-wrap{margin-top:24px;}
+    .intro-inner{grid-template-columns:1fr;}
+    .loc-inner{grid-template-columns:1fr;}
+  }
+  @media (max-width:720px){
+    .nav-links, .nav-cta .btn-ghost{display:none;}
+    .nav-toggle{display:flex;}
+    .nav.is-open .nav-links{
+      display:flex; flex-direction:column; align-items:flex-start; gap:4px;
+      position:absolute; top:100%; left:0; right:0;
+      background:var(--char); padding:16px 24px 22px; border-top:1px solid rgba(251,241,228,0.1);
+    }
+    .nav.is-open .nav-links a{width:100%; padding:10px 0;}
+    .menu-head{flex-direction:column; align-items:flex-start;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .steam{animation:none; opacity:0.5;}
+    .btn, .dish, .top-btn{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav" id="siteNav">
+  <div class="nav-inner">
+    <a href="#home" class="brand">LAGWERTA <small>ni Celio</small></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#grill">Off the Grill</a></li>
+      <li><a href="#cold">Something Cold</a></li>
+      <li><a href="#location">Find Us</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="tel:+639501322615" class="btn btn-ghost">Call Now</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Carrascal · Surigao del Sur · National Highway</span>
+        <h1>Lagwerta<br>ni Celio<em>good food, good company, every night</em></h1>
+        <p class="hero-copy">A roadside table in Barangay Bon-ot for burgers off the grill, pizza out of the oven, and sizzling platters that arrive still talking. When the plates cool down, the halo-halo and fresh shakes take over.</p>
+        <div class="hero-ctas">
+          <a href="tel:+639501322615" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" width="18" height="18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call to Order
+          </a>
+          <a href="#grill" class="btn btn-ghost">See the Menu</a>
+        </div>
+        <div class="hero-facts">
+          <div class="hero-fact">
+            <span class="eyebrow">Address</span>
+            <strong>Brgy. Bon-ot, National Hwy</strong>
+          </div>
+          <div class="hero-fact">
+            <span class="eyebrow">Phone</span>
+            <strong>0950 132 2615</strong>
+          </div>
+          <div class="hero-fact">
+            <span class="eyebrow">Rating</span>
+            <strong>5.0 on Google</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="plate-wrap" aria-hidden="true">
+        <svg viewBox="0 0 320 320" width="320" height="320">
+          <ellipse cx="160" cy="205" rx="120" ry="34" fill="#241C18" stroke="#3A2E27" stroke-width="3"/>
+          <ellipse cx="160" cy="196" rx="120" ry="34" fill="#2C221D"/>
+          <ellipse cx="160" cy="188" rx="98" ry="24" fill="#EA4B1E" opacity="0.14"/>
+          <path d="M96 175 C120 150 200 150 224 175 C224 195 200 208 160 208 C120 208 96 195 96 175 Z" fill="#F4703F"/>
+          <path d="M110 172 C128 156 192 156 210 172 C205 184 188 191 160 191 C132 191 115 184 110 172 Z" fill="#EA4B1E"/>
+          <g stroke="#F2B705" stroke-width="4" stroke-linecap="round" opacity="0.85">
+            <path class="steam" d="M120 150 q-8 -20 0 -34" fill="none"/>
+            <path class="steam d2" d="M160 146 q8 -22 -2 -38" fill="none"/>
+            <path class="steam d3" d="M200 150 q10 -18 2 -34" fill="none"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="intro">
+    <div class="wrap intro-inner">
+      <div>
+        <h2>A stop worth pulling over for</h2>
+        <p>Right off the National Highway in Bon-ot, Lagwerta ni Celio keeps a table open for family, friends, and anyone driving through Carrascal hungry. Order at the counter, grab a seat, and let the grill do the rest.</p>
+      </div>
+      <div class="stat-list">
+        <div class="stat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span><strong>Location</strong><span>P1, Brgy. Bon-ot, National Highway, Carrascal, Surigao del Sur</span></span>
+        </div>
+        <div class="stat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span><strong>Phone / Text</strong><span>0950 132 2615</span></span>
+        </div>
+        <div class="stat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <span><strong>Hours</strong><span>Call or message ahead to confirm today's hours</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFF THE GRILL -->
+  <section class="menu-section menu-grill" id="grill">
+    <div class="wrap">
+      <div class="menu-head">
+        <div>
+          <span class="eyebrow">Off the Grill</span>
+          <h2>Sizzling, straight&nbsp;from&nbsp;the&nbsp;flame</h2>
+        </div>
+        <p>The savory half of the menu — burgers, pizza, and the hot platters people drive back for.</p>
+      </div>
+      <div class="menu-grid">
+        <article class="dish">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h16a1 1 0 0 1 1 1c0 1.5-1 3-2 3H5c-1 0-2-1.5-2-3a1 1 0 0 1 1-1Z"/><path d="M5 14h14l-.7 3.2a2 2 0 0 1-2 1.8H7.7a2 2 0 0 1-2-1.8L5 14Z"/><path d="M6 9c0-2.8 2.7-5 6-5s6 2.2 6 5"/><path d="M3.5 10.5h17" stroke-dasharray="1 3"/></svg>
+          <h3>Juicy Burgers</h3>
+          <p>Stacked and grilled to order — the roadside classic done right.</p>
+        </article>
+        <article class="dish">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 20h20L12 2Z"/><circle cx="12" cy="14" r="1"/><circle cx="9" cy="17" r="1"/><circle cx="15" cy="17" r="1"/></svg>
+          <h3>Cheesy Pizza</h3>
+          <p>Oven-baked and loaded with cheese, sliced up for the table.</p>
+        </article>
+        <article class="dish">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="16" rx="9" ry="3"/><path d="M6 15c1-6 3-9 6-9s5 3 6 9"/></svg>
+          <h3>Sizzling Hot Platters</h3>
+          <p>The ones that arrive still hissing — order it and you'll hear it coming.</p>
+        </article>
+        <article class="dish">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="18" height="7" rx="1"/><path d="M3 10c0-3 4-5 9-5s9 2 9 5"/><path d="M8 17v2M16 17v2"/></svg>
+          <h3>Filipino Meals, with a Twist</h3>
+          <p>Home-style classics from the Lagwerta kitchen, with Celio's own spin.</p>
+        </article>
+      </div>
+      <p class="price-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        Prices and daily specials are posted in-store — call or message ahead if you'd like to check before you drive over.
+      </p>
+    </div>
+  </section>
+
+  <!-- DIVIDER: sizzle cools into ice -->
+  <svg class="divider" viewBox="0 0 1200 90" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,0 L1200,0 L1200,40 C1000,80 800,10 600,45 C400,80 200,15 0,50 Z" fill="var(--cream)"/>
+  </svg>
+
+  <!-- SOMETHING COLD -->
+  <section class="menu-section menu-cold" id="cold">
+    <div class="wrap">
+      <div class="menu-head">
+        <div>
+          <span class="eyebrow">Something Cold</span>
+          <h2>When the grill cools, the ice comes out</h2>
+        </div>
+        <p>The dessert half of the menu — shaved ice, sweet corn, and shakes blended cold.</p>
+      </div>
+      <div class="menu-grid">
+        <article class="dish">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10l-1 15a3 3 0 0 1-3 3h-2a3 3 0 0 1-3-3L7 3Z"/><path d="M7 9h10"/><path d="M6 3h12"/><circle cx="12" cy="5.5" r="1.3" fill="currentColor" stroke="none"/></svg>
+          <h3>Halo-Halo</h3>
+          <p>Shaved ice layered and creamy, built to share across the whole table.</p>
+        </article>
+        <article class="dish">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12l-1.5 16a1 1 0 0 1-1 1h-7a1 1 0 0 1-1-1L6 4Z"/><path d="M9 9c1-1.3 2-1.3 3 0s2 1.3 3 0"/></svg>
+          <h3>Mais con Yelo</h3>
+          <p>Sweet corn and shaved ice — a Carrascal favorite on a hot afternoon.</p>
+        </article>
+        <article class="dish">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2h6l-1 5H10L9 2Z"/><path d="M8 7h8l-1 13a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2L8 7Z"/><path d="M8.5 12h7"/></svg>
+          <h3>Fresh Fruit Shakes</h3>
+          <p>Blended cold and poured generous — ask what's ripe today.</p>
+        </article>
+      </div>
+      <p class="price-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        Ask about sizes — halo-halo and shakes usually come in regular and share-size servings.
+      </p>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="location" id="location">
+    <div class="wrap loc-inner">
+      <div>
+        <span class="eyebrow">Find Us</span>
+        <h2>Pull up a chair in Bon-ot</h2>
+        <div class="loc-list">
+          <div class="loc-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>
+              <strong>Address</strong>
+              <span>P1, Brgy. Bon-ot, National Highway, Carrascal, Surigao del Sur</span>
+            </span>
+          </div>
+          <div class="loc-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>
+              <strong>Call or Text</strong>
+              <a href="tel:+639501322615">0950 132 2615</a>
+            </span>
+          </div>
+          <div class="loc-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3Z"/></svg>
+            <span>
+              <strong>Facebook</strong>
+              <a href="https://www.facebook.com/people/Lagwerta-ni-Celio/100063767604677/" target="_blank" rel="noopener">Lagwerta ni Celio</a>
+            </span>
+          </div>
+        </div>
+        <div class="loc-ctas">
+          <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=9WCM%2BP8+Carrascal%2C+Surigao+del+Sur" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" width="18" height="18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Get Directions
+          </a>
+          <a class="btn btn-ghost" href="tel:+639501322615">Call Now</a>
+        </div>
+      </div>
+
+      <div class="map-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span class="eyebrow" style="color:var(--muted-on-dark)">Google Plus Code</span>
+        <span class="plus-code">9WCM+P8 Carrascal</span>
+        <p>Tap "Get Directions" to open this spot in Google Maps and route yourself in from wherever you're starting.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div>
+      <div class="foot-brand">LAGWERTA NI CELIO</div>
+      <div class="foot-tag">good food, good company, every night</div>
+    </div>
+    <ul class="foot-links">
+      <li><a href="tel:+639501322615">0950 132 2615</a></li>
+      <li><a href="https://www.facebook.com/people/Lagwerta-ni-Celio/100063767604677/" target="_blank" rel="noopener">Facebook</a></li>
+      <li><a href="#home">Back to top</a></li>
+    </ul>
+  </div>
+</footer>
+
+<button class="top-btn" id="topBtn" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+(function(){
+  var nav = document.getElementById('siteNav');
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  var topBtn = document.getElementById('topBtn');
+
+  // mobile nav toggle
+  toggle.addEventListener('click', function(){
+    var open = nav.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  links.addEventListener('click', function(e){
+    if (e.target.tagName === 'A'){
+      nav.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open menu');
+    }
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && nav.classList.contains('is-open')){
+      nav.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.focus();
+    }
+  });
+
+  // sticky nav shadow + back-to-top visibility
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY || window.pageYOffset;
+    nav.classList.toggle('is-scrolled', y > 8);
+    topBtn.classList.toggle('is-visible', y > 480);
+  }, { passive: true });
+
+  topBtn.addEventListener('click', function(){
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // scrollspy
+  var sections = ['home','grill','cold','location'].map(function(id){ return document.getElementById(id); }).filter(Boolean);
+  var navAnchors = Array.prototype.slice.call(links.querySelectorAll('a'));
+  if ('IntersectionObserver' in window && sections.length){
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting){
+          var id = entry.target.id;
+          navAnchors.forEach(function(a){
+            a.classList.toggle('is-active', a.getAttribute('href') === '#' + id);
+          });
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+    sections.forEach(function(s){ observer.observe(s); });
+  }
+})();
+</script>
+
+</body>
+</html>
